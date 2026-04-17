@@ -1,0 +1,12 @@
+# Generated figures / exports
+*.png
+*.svg
+# Data files
+*.csv
+*.xlsx
+*.npy
+*.npz
+*.pt
+*.pth
+*.pkl
+*.joblib
