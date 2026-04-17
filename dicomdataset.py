@@ -14,14 +14,17 @@ class DICOMDataset(Dataset):
         labels (np.ndarray): NumPy array of labels (e.g., IOSONSbinary) for each sample.
         transform (callable, optional): Optional transform to be applied on a sample.
         target_transform (callable, optional): Optional transform to be applied on a label.
+        shared_base_directory (str): Root folder on Drive (or local) containing
+            ``{prefix}-axial`` and ``{prefix}-coronal`` subdirectories.
     """
     def __init__(self, data_dir_prefix: str, VAlogmars: np.ndarray,
                  labels: np.ndarray, transform: transforms.Compose = None,
-                 target_transform: callable = None):
+                 target_transform: callable = None,
+                 shared_base_directory: str = "/content/drive/MyDrive/Farabi"):
         self.labels = labels
         self.VAlogmars = VAlogmars
-        self.axial_images_dir = f'/content/{data_dir_prefix}-axial'
-        self.coronal_images_dir = f'/content/{data_dir_prefix}-coronal'
+        self.axial_images_dir = os.path.join(shared_base_directory, f"{data_dir_prefix}-axial")
+        self.coronal_images_dir = os.path.join(shared_base_directory, f"{data_dir_prefix}-coronal")
         self.transform = transform
         self.target_transform = target_transform
 
