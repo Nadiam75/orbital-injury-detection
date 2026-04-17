@@ -10,3 +10,25 @@
 *.pth
 *.pkl
 *.joblib
+
+
+*.docx
+*.doc
+*.pdf
+*.txt
+*.md
+*.html
+*.css
+*.js
+*.json
+*.xml
+*.yaml
+*.yml
+*.jpg
+
+*.md
+*.mmd
+
+# macOS / Python caches
+.DS_Store
+__pycache__/
